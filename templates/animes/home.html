@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}AniMan - Home{% endblock %}
+
+{% block content %}
+<!-- Carrossel principal -->
+<div id="animeCarousel" class="carousel slide mb-5 shadow rounded" data-bs-ride="carousel" style="max-height: 480px; overflow: hidden;">
+  <div class="carousel-inner">
+    {% for anime in animes|slice:":5" %}
+    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+      <img src="
+        {% if anime.imagem %}
+          {{ anime.imagem.url }}
+        {% else %}
+          {% if forloop.counter0 == 0 %}
+            {% static 'images/Cowboy_Bebop_intertitle.jpg' as cb_url %}
+            {{ cb_url }}
+          {% elif forloop.counter0 == 1 %}
+            {% static 'images/gachiakuta.jpg' as gachi_url %}
+            {{ gachi_url }}
+          {% elif forloop.counter0 == 2 %}
+            {% static 'images/fragrant2.jpg' as fragrant_url %}
+            {{ fragrant_url }}
+          {% elif forloop.counter0 == 3 %}
+            {% static 'images/onepiece.jpg' as onepiece_url %}
+            {{ onepiece_url }}
+          {% elif forloop.counter0 == 4 %}
+            {% static 'images/aot.jpg' as aot_url %}
+            {{ aot_url }}
+          {% endif %}
+        {% endif %}
+      " class="d-block w-100" alt="{{ anime.titulo }}" style="height: 480px; object-fit: cover;">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3" style="bottom: 20px; left: 20px; right: auto; max-width: 40%;">
+        <h2 class="fw-bold">{{ anime.titulo }}</h2>
+        <p>{{ anime.sinopse|truncatewords:40 }}</p>
+        <a href="{% url 'anime_detalhes' anime.id %}" class="btn btn-outline-light btn-sm"></a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#animeCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#animeCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Próximo</span>
+  </button>
+</div>
+
+<!-- Título seção Animes -->
+<h3 class="mb-4 fw-bold">Animes Disponíveis</h3>
+
+<!-- Grid de cards -->
+<div class="row row-cols-1 row-cols-md-4 g-4">
+  {% for anime in animes %}
+
+    {% if anime.titulo == "Cowboy Bebop" %}
+      {% static 'images/logo1.jpg' as image_url %}
+    {% elif anime.titulo == "Gachiakuta" %}
+      {% static 'images/logo2.jpg' as image_url %}
+    {% elif anime.titulo == "The Fragrant Flower Blooms With Dignity" %}
+      {% static 'images/logo3.jpg' as image_url %}
+    {% elif anime.titulo == "One Piece" %}
+      {% static 'images/logo4.jpg' as image_url %}
+    {% elif anime.titulo == "Attack on Titan" %}
+      {% static 'images/logo5.jpg' as image_url %}
+    {% else %}
+    {% endif %}
+
+    <div class="col">
+      <div class="card h-100 shadow-sm border-0">
+        <img src="{{ image_url }}" alt="{{ anime.titulo }}" class="card-img-top" style="height: 420px; object-fit: cover; border-radius: 0.5rem;">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title fw-semibold">{{ anime.titulo }}</h5>
+          <p class="card-text flex-grow-1 text-truncate" style="max-height: 4.5em;">{{ anime.sinopse }}</p>
+          {% if anime.titulo == "Cowboy Bebop" %}
+            <a href="{% url 'anime_detalhes' anime.id %}" class="btn btn-primary btn-sm mt-auto">Detalhes</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+  {% endfor %}
+</div>
+
+{% endblock %}
