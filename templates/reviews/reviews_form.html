@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5" style="max-width: 600px;">
+    <h2 class="mb-4 text-center">Deixe sua Review</h2>
+
+    {% if sucesso %}
+        <div class="alert alert-success text-center">{{ sucesso }}</div>
+    {% endif %}
+
+    {% if erro %}
+        <div class="alert alert-danger text-center">{{ erro }}</div>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <!-- Anime (select) -->
+        <div class="mb-3">
+            <label for="anime" class="form-label">Anime</label>
+            <select class="form-control" id="anime" name="anime" required size="5">
+                {% for anime in animes %}
+                    <option value="{{ anime.id }}">{{ anime.nome }}</option>
+                {% endfor %}
+            </select>
+            <small class="form-text text-muted">
+                Use Ctrl (ou Cmd no Mac) para selecionar.
+            </small>
+        </div>
+
+        <!-- Mensagem -->
+        <div class="mb-3">
+            <label for="mensagem" class="form-label">Mensagem</label>
+            <textarea class="form-control" id="mensagem" name="mensagem" rows="5" placeholder="Escreva seu comentário" required></textarea>
+        </div>
+
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Enviar Review</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
