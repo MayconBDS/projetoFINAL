@@ -1,0 +1,12 @@
+<!-- templates/animes/detalhes.html -->
+{% extends 'base.html' %}
+
+{% block title %}{{ anime.titulo }} - Detalhes{% endblock %}
+
+{% block content %}
+<h1>{{ anime.titulo }}</h1>
+<img src="{{ anime.imagem.url }}" alt="{{ anime.titulo }}">
+<p>{{ anime.sinopse }}</p>
+<!-- adicione mais informações que desejar -->
+<a href="{% url 'home' %}">Voltar</a>
+{% endblock %}
