@@ -11,3 +11,7 @@ def anime_detalhes(request, anime_id):
     anime = get_object_or_404(Anime, id=anime_id)
     return render(request, 'animes/detalhes.html', {'anime': anime})
 
+@login_required
+def profile_view(request):
+    
+    return render(request, 'usuarios/profile.html')

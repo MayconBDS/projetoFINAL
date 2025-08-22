@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Reset e base */
 body {
     margin: 0;
@@ -192,3 +193,199 @@ body {
 .anime-card .btn:hover {
     background-color: #732d91;
 }
+=======
+/* Reset e base */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+/* Banner grande com imagem */
+.banner-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-bottom: 4px solid #8e44ad;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Título centralizado sobre banner */
+.banner-text {
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    color: white;
+    background-color: rgba(0,0,0,0.6);
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Seção de lançamentos */
+.section-title {
+    font-size: 1.8rem;
+    margin: 40px 0 20px 20px;
+    color: #f9f9f9;
+    border-left: 4px solid #8e44ad;
+    padding-left: 10px;
+}
+
+/* Grid de animes */
+.anime-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px 40px;
+}
+
+/* Card de anime */
+.anime-card {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
+    transition: transform 0.3s;
+}
+
+.anime-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+.anime-card img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+}
+
+.anime-card .info {
+    padding: 10px;
+}
+
+.anime-card .info h4 {
+    margin: 0 0 5px;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.anime-card .info p {
+    font-size: 0.85rem;
+    color: #bbbbbb;
+}
+
+.anime-card .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #8e44ad;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.anime-card .btn:hover {
+    background-color: #732d91;
+}
+/* Reset e base */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+/* Banner grande com imagem */
+.banner-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-bottom: 4px solid #8e44ad;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Título centralizado sobre banner */
+.banner-text {
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    color: white;
+    background-color: rgba(0,0,0,0.6);
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Seção de lançamentos */
+.section-title {
+    font-size: 1.8rem;
+    margin: 40px 0 20px 20px;
+    color: #f9f9f9;
+    border-left: 4px solid #8e44ad;
+    padding-left: 10px;
+}
+
+/* Grid de animes */
+.anime-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px 40px;
+}
+
+/* Card de anime */
+.anime-card {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
+    transition: transform 0.3s;
+}
+
+.anime-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+.anime-card img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+}
+
+.anime-card .info {
+    padding: 10px;
+}
+
+.anime-card .info h4 {
+    margin: 0 0 5px;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.anime-card .info p {
+    font-size: 0.85rem;
+    color: #bbbbbb;
+}
+
+.anime-card .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #8e44ad;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.anime-card .btn:hover {
+    background-color: #732d91;
+}
+>>>>>>> luis2
